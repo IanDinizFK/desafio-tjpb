@@ -9,7 +9,7 @@ public class EmailService {
         System.out.println("Nova solicitação cadastrada!");
         System.out.println("Titulo: " + tituloSolicitacao);
         System.out.println("Solicitante: " + email);
-        System.err.println("Status: " + "ABERTO");
+        System.out.println("Status: " + "ABERTO");
         return "Ok!";
     }
 }
