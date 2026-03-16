@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.springboot.dtos.alterarSolicitacaoDto;
 import com.example.springboot.dtos.solicitationRecordDto;
 import com.example.springboot.models.SolicitationModel;
+import com.example.springboot.models.StatusSolicitacao;
 import com.example.springboot.services.SolicitationServices;
 
 import jakarta.validation.Valid;
@@ -40,9 +41,10 @@ public class SolicitationController {
         return solicitationServices.getSolicitacoes();
     }
 
-    @PutMapping("alterarStatus/{id}")
-    public String putMethodName(@PathVariable Long id, @Valid alterarSolicitacaoDto data) {
-       return solicitationServices.alterarStatus(id, data.status());
+    @PutMapping("alterarStatus/{id}/{status}")
+    public String putMethodName(@PathVariable Long id, @PathVariable StatusSolicitacao status) {
+        System.out.println(status);
+       return solicitationServices.alterarStatus(id, status);
     }
     
     

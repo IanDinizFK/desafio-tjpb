@@ -43,6 +43,7 @@ public class SolicitationServices {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
                     "Não se pode alterar uma solicitação que foi já concluída");
         }
+        System.out.println(status);
         sol.setStatus(status);
         solicitationRepository.save(sol);
         return "Status atualizado com sucesso!";

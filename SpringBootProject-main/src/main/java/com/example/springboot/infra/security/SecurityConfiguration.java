@@ -29,7 +29,7 @@ public class SecurityConfiguration {
                         .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
                         .requestMatchers(HttpMethod.POST, "/solicitacoes/register").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.GET, "/solicitacoes/listar").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.GET, "/solicitacoes/alterarStatus/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/solicitacao/alterarStatus/{id}").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
