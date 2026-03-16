@@ -15,11 +15,17 @@ import com.example.springboot.models.StatusSolicitacao;
 import com.example.springboot.repositories.SolicitationRepository;
 
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.validation.constraints.Email;
 
 @Service
 public class SolicitationServices {
     @Autowired
     SolicitationRepository solicitationRepository;
+
+    @Autowired EmailService emailService;
+    SolicitationServices(EmailService emailService) {
+        this.emailService = emailService;
+    }
 
     public SolicitationModel cadastrarSolicitacao(solicitationRecordDto data) {
         SolicitationModel newSolicitation = new SolicitationModel();
@@ -28,7 +34,7 @@ public class SolicitationServices {
         newSolicitation.setEmail_solicitante(data.solicitante());
         newSolicitation.setDataCriacao(LocalDateTime.now());
         newSolicitation.setStatus(StatusSolicitacao.ABERTA);
-
+        emailService.enviarEmail(data.solicitante(), data.titulo());
         return solicitationRepository.save(newSolicitation);
     }
 
