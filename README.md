@@ -50,8 +50,35 @@ Status possíveis:
 ---
 
 ### 📧 Email (Simulado)
-Ao criar uma solicitação, o sistema simula envio de email via log:
+Ao criar uma solicitação, o sistema simula envio de email via log.
 
+
+### Spring Security com:
+- ✔ Basic Authentication
+- ✔ Usuário fixo em memória (ex: admin / admin)
+
+
+### FRONTEND
+- Criar uma interface simples contendo:
+- ✔ Formulário de cadastro
+- ✔ Tela de listagem
+- ✔ Botão para alterar status
+
+### ⭐ Melhorias (Opcional)
+- Docker (Postgres + MailHog)
+- Liquibase
+- Paginação
+- Filtros por status
+- Validações adicionais
+
+### 🚫REGRAS
+- Tempo Total: 2 horas 30 minutos.
+- ● Execução presencial
+- ● Consulta: Liberada (StackOverflow, Documentação Oficial, Baeldung).
+- ● Uso de IA: PROIBIDO. O uso de ChatGPT, Claude, GitHub Copilot ou similares resultará em
+desclassificação imediata. Queremos avaliar o seu raciocínio, não o do modelo.
+
+---
 
 # BACKEND 100%, front não deu tempo fazer, tempo acabou quando estava inicializando o angular.
 # Backend (Completo com todas as funcionalidades)
